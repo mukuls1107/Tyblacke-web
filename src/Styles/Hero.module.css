@@ -1,0 +1,57 @@
+.box{
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 100px auto 0;  /* Added top margin to avoid navbar collision */
+    min-height: 60vh;  /* Using min-height instead of height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    background-color: transparent;
+    transition: all .5s ease-in-out;
+}
+
+/* Text styles */
+.box h1 {
+    text-align: center;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    line-height: 1.4;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+img{
+    width: 100%;
+    image-rendering: optimizeSpeed;
+    /* height: 32rem; */
+    /* width: 32rem; */
+}
+/* Responsive adjustments */
+@media (max-width: 1023px) {
+    .box {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 80px auto 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .box {
+        width: 95%;
+        padding: 1rem;
+        min-height: 50vh;
+        margin: 70px auto 0;
+    }
+}
+
+@media (max-width: 639px) {
+    .box {
+        width: 100%;
+        min-height: 45vh;
+        margin: 60px auto 0;
+        padding: 1rem 0.5rem;
+    }
+}
