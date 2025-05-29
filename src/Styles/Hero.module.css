@@ -1,10 +1,14 @@
-.box{
-    padding: 2rem;
-    position: relative;
-    width: 100%;
+.box {
+    /* padding: 2rem; */
+    position: absolute;
+    bottom: 3%;
+    width: 20%;
+    min-width: 1200px;
+    min-height: 100%;
+    /* width: 80vw;
     max-width: 1200px;
-    margin: 100px auto 0;  /* Added top margin to avoid navbar collision */
-    min-height: 60vh;  /* Using min-height instead of height */
+    margin: 100px auto 0; /* Added top margin to avoid navbar collision */
+    /* min-height: 80vh;  Using min-height instead of height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,21 +18,35 @@
 }
 
 /* Text styles */
-.box h1 {
+/* .box h1 {
     text-align: center;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     line-height: 1.4;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
+} */
 
 
-img{
+img {
     width: 100%;
+    /* height: 100%; */
     image-rendering: optimizeSpeed;
-    /* height: 32rem; */
+    /* height: 100%; */
     /* width: 32rem; */
 }
+
+.name {
+    position: absolute;
+    top: 70%;
+    font-family: "Syne";
+    font-size: 100px;
+    line-height: 135px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: #E5F65A;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1023px) {
     .box {

@@ -7,6 +7,7 @@ const Hero = () => {
     <section className="container hero" id="hero">
       <div className={styles.box}>
       <img src={tylerImage} alt="" />
+      <h1 className={styles.name}>Ty Blacke</h1>
       </div>
     </section>
   );
