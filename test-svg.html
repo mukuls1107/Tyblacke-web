@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Test</title>
+</head>
+<body>
+    <h2>Testing SVG Loading</h2>
+    
+    <div>
+        <h3>Instagram:</h3>
+        <img src="/public/icons/instagram.svg" alt="Instagram" width="30" height="30" style="border: 1px solid red;">
+    </div>
+    
+    <div>
+        <h3>Spotify:</h3>
+        <img src="/public/icons/spotify.svg" alt="Spotify" width="30" height="30" style="border: 1px solid red;">
+    </div>
+    
+    <div>
+        <h3>YouTube:</h3>
+        <img src="/public/icons/youtube.svg" alt="YouTube" width="30" height="30" style="border: 1px solid red;">
+    </div>
+    
+    <div>
+        <h3>SoundCloud:</h3>
+        <img src="/public/icons/soundcloud.svg" alt="SoundCloud" width="30" height="30" style="border: 1px solid red;">
+    </div>
+    
+    <div>
+        <h3>Twitter:</h3>
+        <img src="/public/icons/twitter.svg" alt="Twitter" width="30" height="30" style="border: 1px solid red;">
+    </div>
+    
+    <script>
+        // Add error handling
+        document.querySelectorAll('img').forEach(img => {
+            img.onload = () => console.log(`Loaded: ${img.src}`);
+            img.onerror = () => console.error(`Failed to load: ${img.src}`);
+        });
+    </script>
+</body>
+</html>

@@ -22,20 +22,19 @@
 */
 
 .box {
-    position: static;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 99;
     background-color: #000;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    position: fixed;
     width: 100vw;
-    height: 9%;
+    height: 80px;
     border-bottom: 1px solid grey;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    padding: 0 2rem;
     font-family: "Syne", sans-serif;
     font-weight: bold;
     font-optical-sizing: auto;
@@ -45,14 +44,16 @@
 .left {
     display: flex;
     align-items: center;
-    /* border: 1px solid red; */
+    flex: 1;
+    justify-content: flex-start;
 }
 
 /* Right section container */
 .right {
-    /* border: 1px solid red; */
     display: flex;
     align-items: center;
+    flex: 1;
+    justify-content: space-around;
 }
 
 .image {
@@ -67,14 +68,13 @@
     mask-position: center;
     mask-size: contain;
 
-    width: 150px;
-    height: 120px;
+    width: 120px;
+    height: 80px;
     transition: 0.2s ease-in-out;
-
-    /* border: 1px solid red; */
+    flex: 0 0 auto;
 }
 
-.image:hover{
+.image:hover {
     cursor: pointer;
     background-color: #FF3300;
 }
@@ -104,7 +104,7 @@
 
 .leftNav p:hover {
     color: #FF3300;
-    background: rgba(232, 197, 71, 0.1);
+    /* background: rgba(232, 197, 71, 0.1); */
     transform: translateY(-2px);
 }
 
@@ -127,64 +127,86 @@
     margin: 0;
 }
 
-.socialIcon svg {
-    width: 20px;
-    height: 20px;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+.socialIcon img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
     flex-shrink: 0;
+    filter: brightness(0) saturate(100%) invert(94%) sepia(6%) saturate(1049%) hue-rotate(329deg) brightness(103%) contrast(87%);
 }
 
-.socialIcon span {
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.socialIcon:hover {
-    color: #e8c547;
-}
 
-.socialIcon:hover svg {
-    color: #e8c547;
-}
 
-.socialIcon:hover span {
-    color: #e8c547;
-    /* font-weight: 600; */
-}
 
-/* Individual brand colors on hover (subtle text only) */
-.socialIcon:nth-child(1):hover,
-.socialIcon:nth-child(1):hover svg,
-.socialIcon:nth-child(1):hover span {
-    color: #E4405F;
+
+/* Individual brand colors on hover for images */
+.socialIcon:nth-child(1):hover img {
+    filter: brightness(0) saturate(100%) invert(36%) sepia(86%) saturate(5746%) hue-rotate(322deg) brightness(90%) contrast(97%);
     /* Instagram */
 }
 
-.socialIcon:nth-child(2):hover,
-.socialIcon:nth-child(2):hover svg,
-.socialIcon:nth-child(2):hover span {
-    color: #1DB954;
+.socialIcon:nth-child(2):hover img {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1564%) hue-rotate(88deg) brightness(96%) contrast(91%);
     /* Spotify */
 }
 
-.socialIcon:nth-child(3):hover,
-.socialIcon:nth-child(3):hover svg,
-.socialIcon:nth-child(3):hover span {
-    color: #FF0000;
+.socialIcon:nth-child(3):hover img {
+    filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7496%) hue-rotate(0deg) brightness(100%) contrast(100%);
     /* YouTube */
 }
 
-.socialIcon:nth-child(4):hover,
-.socialIcon:nth-child(4):hover svg,
-.socialIcon:nth-child(4):hover span {
-    color: #FF3300;
+.socialIcon:nth-child(4):hover img {
+    filter: brightness(0) saturate(100%) invert(19%) sepia(100%) saturate(7435%) hue-rotate(5deg) brightness(107%) contrast(107%);
     /* SoundCloud */
 }
 
-.socialIcon:nth-child(5):hover,
-.socialIcon:nth-child(5):hover svg,
-.socialIcon:nth-child(5):hover span {
-    color: #1DA1F2;
+.socialIcon:nth-child(5):hover img {
+    filter: brightness(0) saturate(100%) invert(54%) sepia(98%) saturate(1299%) hue-rotate(182deg) brightness(103%) contrast(97%);
     /* Twitter */
+}
+
+/* Responsive adjustments for social icons */
+/* @media (max-width: 1023px) {
+    .socialIcon {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .socialIcon img {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .socialIcon span {
+        font-size: 12px;
+    }
+} */
+
+@media (max-width: 767px) {
+    .socialIcon {
+        padding: 6px 8px;
+        gap: 4px;
+    }
+    
+    .socialIcon img {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .socialIcon span {
+        display: none; /* Hide text on mobile for space */
+    }
+}
+
+@media (max-width: 480px) {
+    .socialIcon {
+        padding: 4px 6px;
+    }
+    
+    .socialIcon img {
+        width: 16px;
+        height: 16px;
+    }
 }
