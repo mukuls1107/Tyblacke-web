@@ -1,0 +1,424 @@
+/* Music Section Styles - TY BLACKE Brand */
+
+.music {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #111111 0%, #000000 50%, #111111 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.music::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(229, 246, 90, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(229, 246, 90, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    font-family: "Syne", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #E5F65A;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    background: rgba(229, 246, 90, 0.1);
+    border: 1px solid rgba(229, 246, 90, 0.3);
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-family: "Syne", sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: white;
+    margin: 0 0 1rem 0;
+}
+
+.subtitle {
+    font-family: "Syne", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Music Grid */
+.musicGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.musicCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.musicCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-color: rgba(229, 246, 90, 0.3);
+}
+
+.musicCard.featured {
+    background: linear-gradient(135deg, rgba(229, 246, 90, 0.1) 0%, rgba(229, 246, 90, 0.05) 100%);
+    border: 1px solid rgba(229, 246, 90, 0.3);
+}
+
+.imageContainer {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.albumCover {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.playOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.imageContainer:hover .playOverlay {
+    opacity: 1;
+}
+
+.playButton {
+    width: 60px;
+    height: 60px;
+    background: #E5F65A;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.playButton:hover {
+    background: #f0ff6a;
+    transform: scale(1.1);
+}
+
+/* Song Info */
+.songInfo {
+    text-align: left;
+}
+
+.songTitle {
+    font-family: "Syne", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 0.5rem 0;
+}
+
+.songDescription {
+    font-family: "Syne", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+.songMeta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.duration {
+    font-family: "Syne", sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.actionButton {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.actionButton:hover {
+    background: rgba(229, 246, 90, 0.2);
+    color: #E5F65A;
+}
+
+/* Platforms Section */
+.platforms {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.platformsTitle {
+    font-family: "Syne", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 2rem 0;
+}
+
+.platformLinks {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.platformLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Syne", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.platformLink:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    border-color: rgba(229, 246, 90, 0.3);
+    color: #E5F65A;
+}
+
+.platformLink img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.platformLink:hover img {
+    filter: none;
+}
+
+.platformLink[data-platform="spotify"]:hover img {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(98%) saturate(1220%) hue-rotate(88deg) brightness(97%) contrast(86%);
+}
+
+.platformLink[data-platform="youtube"]:hover img {
+    filter: brightness(0) saturate(100%) invert(17%) sepia(95%) saturate(7471%) hue-rotate(355deg) brightness(103%) contrast(115%);
+}
+
+.platformLink[data-platform="soundcloud"]:hover img {
+    filter: brightness(0) saturate(100%) invert(53%) sepia(85%) saturate(2526%) hue-rotate(11deg) brightness(101%) contrast(101%);
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.ctaButton {
+    background: linear-gradient(135deg, #E5F65A 0%, #c4d633 100%);
+    color: #000;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    font-family: "Syne", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(229, 246, 90, 0.3);
+}
+
+.ctaButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(229, 246, 90, 0.4);
+    background: linear-gradient(135deg, #f0ff6a 0%, #d4e640 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+    .music {
+        padding: 4rem 0;
+    }
+    
+    .musicGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .platformLinks {
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .music {
+        padding: 3rem 0;
+    }
+    
+    .header {
+        margin-bottom: 3rem;
+    }
+    
+    .musicGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .albumCover {
+        height: 180px;
+    }
+    
+    .playButton {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .playButton svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .platformLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .platformLink {
+        flex-direction: row;
+        min-width: 200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 639px) {
+    .music {
+        padding: 2rem 0;
+    }
+    
+    .musicCard {
+        padding: 1rem;
+    }
+    
+    .albumCover {
+        height: 150px;
+    }
+    
+    .platformLink {
+        min-width: 150px;
+        padding: 1rem;
+    }
+    
+    .ctaButton {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header > * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.header > *:nth-child(2) { animation-delay: 0.1s; }
+.header > *:nth-child(3) { animation-delay: 0.2s; }
+
+.musicCard {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.musicCard:nth-child(2) { animation-delay: 0.1s; }
+.musicCard:nth-child(3) { animation-delay: 0.2s; }
+.musicCard:nth-child(4) { animation-delay: 0.3s; }

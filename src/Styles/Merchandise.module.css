@@ -1,0 +1,338 @@
+/* Merchandise Section Styles - TY BLACKE Brand */
+
+.merchandise {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #000000 0%, #111111 50%, #000000 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.merchandise::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 40%, rgba(229, 246, 90, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(229, 246, 90, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    font-family: "Syne", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #E5F65A;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    background: rgba(229, 246, 90, 0.1);
+    border: 1px solid rgba(229, 246, 90, 0.3);
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-family: "Syne", sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.2;
+    color: white;
+    margin: 0 0 1rem 0;
+}
+
+.subtitle {
+    font-family: "Syne", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Coming Soon Section */
+.comingSoon {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.iconContainer {
+    margin-bottom: 1.5rem;
+    color: #E5F65A;
+}
+
+.comingSoon h3 {
+    font-family: "Syne", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1rem 0;
+}
+
+.comingSoon > p {
+    font-family: "Syne", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 3rem 0;
+}
+
+/* Product Preview */
+.productPreview {
+    margin: 3rem 0;
+}
+
+.productPreview h4 {
+    font-family: "Syne", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #E5F65A;
+    margin: 0 0 2rem 0;
+}
+
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.productCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.productCard:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(229, 246, 90, 0.3);
+    transform: translateY(-3px);
+}
+
+.productImage {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.productInfo h5 {
+    font-family: "Syne", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin: 0 0 0.5rem 0;
+}
+
+.productInfo p {
+    font-family: "Syne", sans-serif;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+}
+
+.price {
+    font-family: "Syne", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #E5F65A;
+}
+
+/* Features */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    background: rgba(229, 246, 90, 0.05);
+    border-color: rgba(229, 246, 90, 0.2);
+    transform: translateY(-3px);
+}
+
+.feature span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    font-family: "Syne", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+}
+
+.notifyButton {
+    background: linear-gradient(135deg, #E5F65A 0%, #c4d633 100%);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-family: "Syne", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    box-shadow: 0 4px 20px rgba(229, 246, 90, 0.3);
+}
+
+.notifyButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(229, 246, 90, 0.4);
+    background: linear-gradient(135deg, #f0ff6a 0%, #d4e640 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+    .merchandise {
+        padding: 4rem 0;
+    }
+    
+    .comingSoon {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .productGrid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .merchandise {
+        padding: 3rem 0;
+    }
+    
+    .header {
+        margin-bottom: 3rem;
+    }
+    
+    .comingSoon {
+        padding: 2rem 1rem;
+    }
+    
+    .productGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .productImage {
+        height: 100px;
+    }
+    
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .feature {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 639px) {
+    .merchandise {
+        padding: 2rem 0;
+    }
+    
+    .comingSoon h3 {
+        font-size: 1.5rem;
+    }
+    
+    .comingSoon > p {
+        font-size: 1rem;
+    }
+    
+    .productGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features {
+        grid-template-columns: 1fr;
+    }
+    
+    .notifyButton {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header > * {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.header > *:nth-child(2) { animation-delay: 0.1s; }
+.header > *:nth-child(3) { animation-delay: 0.2s; }
+
+.comingSoon {
+    animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.productCard {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.productCard:nth-child(2) { animation-delay: 0.1s; }
+.productCard:nth-child(3) { animation-delay: 0.2s; }
+.productCard:nth-child(4) { animation-delay: 0.3s; }

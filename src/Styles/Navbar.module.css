@@ -30,7 +30,7 @@
     background-color: #000;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100vw;
     height: 80px;
     border-bottom: 1px solid grey;
@@ -46,6 +46,15 @@
     align-items: center;
     flex: 1;
     justify-content: flex-start;
+    min-width: 0; /* Allow flex items to shrink */
+}
+
+/* Center section container */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto; /* Don't grow or shrink */
 }
 
 /* Right section container */
@@ -53,7 +62,8 @@
     display: flex;
     align-items: center;
     flex: 1;
-    justify-content: space-around;
+    justify-content: flex-end;
+    min-width: 0; /* Allow flex items to shrink */
 }
 
 .image {
@@ -85,8 +95,23 @@
 .rightNav {
     display: flex;
     gap: 1rem;
-    font-size: 16px;
+    font-size: 14px;
     align-items: center;
+}
+
+/* Ensure leftNav is visible on desktop */
+.leftNav {
+    display: flex !important;
+    gap: 1.2rem;
+    white-space: nowrap;
+}
+
+/* Style the rightNav for social icons */
+.rightNav {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .leftNav p {
@@ -108,12 +133,35 @@
     transform: translateY(-2px);
 }
 
+/* Update navigation styles for anchor tags */
+.leftNav a {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.leftNav a:hover {
+    color: #E5F65A;
+    background: rgba(229, 246, 90, 0.1);
+    transform: translateY(-2px);
+}
+
 /* Social Icon Styles - Apple Design Inspired */
 .socialIcon {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 12px 18px;
+    gap: 6px;
+    padding: 8px 12px;
     cursor: pointer;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
@@ -125,21 +173,16 @@
     overflow: hidden;
     white-space: nowrap;
     margin: 0;
+    text-decoration: none;
 }
 
-
 .socialIcon img {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     transition: all 0.3s ease-in-out;
     flex-shrink: 0;
     filter: brightness(0) saturate(100%) invert(94%) sepia(6%) saturate(1049%) hue-rotate(329deg) brightness(103%) contrast(87%);
 }
-
-
-
-
-
 
 /* Individual brand colors on hover for images */
 .socialIcon:nth-child(1):hover img {
@@ -167,8 +210,159 @@
     /* Twitter */
 }
 
-/* Responsive adjustments for social icons */
-/* @media (max-width: 1023px) {
+/* Mobile hamburger menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburgerLine {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburgerLine.active:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburgerLine.active:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerLine.active:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu overlay */
+.mobileMenu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    border-bottom: 1px solid rgba(229, 246, 90, 0.2);
+}
+
+.mobileMenu.open {
+    transform: translateY(0);
+}
+
+.mobileMenuContent {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1rem;
+}
+
+.mobileMenuContent a {
+    color: white;
+    text-decoration: none;
+    font-family: "Syne", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.mobileMenuContent a:hover {
+    background: rgba(229, 246, 90, 0.1);
+    border-color: rgba(229, 246, 90, 0.3);
+    color: #E5F65A;
+}
+
+/* Logo cursor pointer */
+.image {
+    cursor: pointer;
+}
+
+/* Large screen optimizations */
+@media (min-width: 1200px) {
+    .box {
+        padding: 0 3rem;
+    }
+    
+    .leftNav {
+        gap: 1.5rem;
+    }
+    
+    .leftNav a {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+    
+    .socialIcon {
+        padding: 10px 14px;
+        gap: 8px;
+    }
+    
+    .socialIcon img {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Medium screen adjustments */
+@media (min-width: 769px) and (max-width: 1199px) {
+    .leftNav {
+        gap: 1rem;
+    }
+    
+    .leftNav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .leftNav {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .right {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .box {
+        padding: 0 1rem;
+        height: 70px;
+    }
+    
+    .image {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .mobileMenu {
+        top: 70px;
+    }
+    
+    .rightNav {
+        gap: 0.5rem;
+    }
+    
     .socialIcon {
         padding: 8px 12px;
         gap: 6px;
@@ -180,33 +374,31 @@
     }
     
     .socialIcon span {
-        font-size: 12px;
+        display: none;
     }
-} */
+}
 
-@media (max-width: 767px) {
+@media (max-width: 639px) {
+    .box {
+        height: 60px;
+        padding: 0 0.5rem;
+    }
+    
+    .image {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .mobileMenu {
+        top: 60px;
+    }
+    
     .socialIcon {
         padding: 6px 8px;
-        gap: 4px;
     }
     
     .socialIcon img {
         width: 18px;
         height: 18px;
-    }
-    
-    .socialIcon span {
-        display: none; /* Hide text on mobile for space */
-    }
-}
-
-@media (max-width: 480px) {
-    .socialIcon {
-        padding: 4px 6px;
-    }
-    
-    .socialIcon img {
-        width: 16px;
-        height: 16px;
     }
 }
