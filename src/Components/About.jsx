@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../Styles/About.module.css";
 import "../Styles/Utility.css";
-
+import tyPiano from "../assets/ty-piano.webp";
 const About = () => {
   return (
     <section className={styles.about} id="about">
@@ -9,20 +9,15 @@ const About = () => {
         <div className={styles.content}>
           <div className={styles.textSection}>
             <div className={styles.badge}>About</div>
-            <h2 className={styles.title}>Called to Share God's Love Through Music</h2>
+            <h2 className={styles.title}>
+              Called to Share God's Love Through Music
+            </h2>
             <p className={styles.description}>
-              TY BLACKE is more than just a musician – he's a vessel for God's message of hope, 
-              love, and redemption. Through powerful lyrics and soul-stirring melodies, 
-              TY creates music that touches hearts and transforms lives.
+            I'm Ty Blacke, a musician passionate about playing the piano, singing, and songwriting. My heart is set on creating worship music and jazz, blending my love for melody with a deep sense of purpose. Above all, I love the Lord with all my heart, and I am incredibly grateful for the work He’s doing in my life.
             </p>
-            <p className={styles.description}>
-              Born with a passion for worship and a heart for ministry, TY has dedicated 
-              his life to using his musical gifts to glorify God and inspire others. 
-              His contemporary Christian sound blends modern production with timeless 
-              spiritual truths, reaching audiences across all generations.
-            </p>
-            
-            <div className={styles.highlights}>
+   
+
+            {/* <div className={styles.highlights}>
               <div className={styles.highlight}>
                 <h3>10+</h3>
                 <p>Years in Ministry</p>
@@ -35,7 +30,7 @@ const About = () => {
                 <h3>25+</h3>
                 <p>Original Songs</p>
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.cta}>
               <a href="#prayer" className={styles.ctaButton}>
@@ -49,19 +44,29 @@ const About = () => {
 
           <div className={styles.imageSection}>
             <div className={styles.imageContainer}>
-              <img 
-                src="/assets/ty-piano.webp" 
+              <img
+                src={tyPiano}
                 alt="TY BLACKE at piano"
                 className={styles.aboutImage}
                 onError={(e) => {
-                  e.target.style.display = 'none';
+                  e.target.style.display = "none";
                 }}
               />
               <div className={styles.imageOverlay}>
                 <div className={styles.playButton}>
-                  <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.68L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/>
-                  </svg>
+                  <a
+                    href="https://youtu.be/zu8PWPyf2-E?si=rsamUFomjuiDtU0y"
+                    target="_blank"
+                  >
+                    <svg
+                      width="60"
+                      height="60"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.68L9.54 5.98C8.87 5.55 8 6.03 8 6.82z" />
+                    </svg>
+                  </a>
                 </div>
                 <p>Watch TY's Testimony</p>
               </div>

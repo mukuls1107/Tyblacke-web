@@ -226,9 +226,10 @@
 }
 
 .notifyButton:hover {
+ color: black;
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(229, 246, 90, 0.4);
-    background: linear-gradient(135deg, #f0ff6a 0%, #d4e640 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #fffffe 100%); 
 }
 
 /* Responsive Design */

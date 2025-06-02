@@ -5,11 +5,11 @@ const ImageBar = ({ items }) => {
     <div className={styles.right}>
       <div className={styles.rightNav}>
         {items.map((item, idx) => (
-          <a 
-            href={item.url || "#"} 
-            className={styles.socialIcon} 
+          <a
+            href={`https://www.${item.title.toLowerCase()}.com/@tyblacke`}
+            className={styles.socialIcon}
             key={idx}
-            target={item.url ? "_blank" : "_self"}
+            target="_blank"
             rel={item.url ? "noopener noreferrer" : ""}
             aria-label={`Follow on ${item.title}`}
           >

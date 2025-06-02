@@ -1,27 +1,5 @@
-/* Main navbar container with glass morphism effect
-.box {
-    box-sizing: border-box;
-    min-width: 100vw;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2rem;
-    
-    z-index: 1000;
-
-    Glass morphism background
-    background: rgba(44, 62, 80, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(232, 197, 71, 0.2);
-
-    Subtle shadow
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-} 
-*/
-
-.box {
+/* Main navbar container */
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -46,15 +24,14 @@
     align-items: center;
     flex: 1;
     justify-content: flex-start;
-    min-width: 0; /* Allow flex items to shrink */
 }
 
-/* Center section container */
+/* Center logo section */
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 auto; /* Don't grow or shrink */
+    flex: 0 0 auto;
 }
 
 /* Right section container */
@@ -63,10 +40,10 @@
     align-items: center;
     flex: 1;
     justify-content: flex-end;
-    min-width: 0; /* Allow flex items to shrink */
 }
 
-.image {
+/* Logo styling */
+.logo {
     background-color: white;
     -webkit-mask-image: url("../assets/logo.webp");
     -webkit-mask-repeat: no-repeat;
@@ -84,34 +61,19 @@
     flex: 0 0 auto;
 }
 
-.image:hover {
-    cursor: pointer;
+.logo:hover {
     background-color: #FF3300;
+    color: white;
+    cursor: pointer;
 }
-
 
 /* Navigation containers */
 .leftNav,
 .rightNav {
     display: flex;
     gap: 1rem;
-    font-size: 14px;
+    font-size: 16px;
     align-items: center;
-}
-
-/* Ensure leftNav is visible on desktop */
-.leftNav {
-    display: flex !important;
-    gap: 1.2rem;
-    white-space: nowrap;
-}
-
-/* Style the rightNav for social icons */
-.rightNav {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: flex-end;
 }
 
 .leftNav p {
@@ -129,39 +91,15 @@
 
 .leftNav p:hover {
     color: #FF3300;
-    /* background: rgba(232, 197, 71, 0.1); */
     transform: translateY(-2px);
 }
 
-/* Update navigation styles for anchor tags */
-.leftNav a {
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-.leftNav a:hover {
-    color: #E5F65A;
-    background: rgba(229, 246, 90, 0.1);
-    transform: translateY(-2px);
-}
-
-/* Social Icon Styles - Apple Design Inspired */
+/* Social Icon Styles */
 .socialIcon {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
+    gap: 8px;
+    padding: 12px 18px;
     cursor: pointer;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
@@ -173,12 +111,11 @@
     overflow: hidden;
     white-space: nowrap;
     margin: 0;
-    text-decoration: none;
 }
 
 .socialIcon img {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     transition: all 0.3s ease-in-out;
     flex-shrink: 0;
     filter: brightness(0) saturate(100%) invert(94%) sepia(6%) saturate(1049%) hue-rotate(329deg) brightness(103%) contrast(87%);
@@ -187,217 +124,187 @@
 /* Individual brand colors on hover for images */
 .socialIcon:nth-child(1):hover img {
     filter: brightness(0) saturate(100%) invert(36%) sepia(86%) saturate(5746%) hue-rotate(322deg) brightness(90%) contrast(97%);
-    /* Instagram */
 }
 
 .socialIcon:nth-child(2):hover img {
     filter: brightness(0) saturate(100%) invert(65%) sepia(99%) saturate(1564%) hue-rotate(88deg) brightness(96%) contrast(91%);
-    /* Spotify */
 }
 
 .socialIcon:nth-child(3):hover img {
     filter: brightness(0) saturate(100%) invert(13%) sepia(100%) saturate(7496%) hue-rotate(0deg) brightness(100%) contrast(100%);
-    /* YouTube */
 }
 
 .socialIcon:nth-child(4):hover img {
     filter: brightness(0) saturate(100%) invert(19%) sepia(100%) saturate(7435%) hue-rotate(5deg) brightness(107%) contrast(107%);
-    /* SoundCloud */
 }
 
 .socialIcon:nth-child(5):hover img {
     filter: brightness(0) saturate(100%) invert(54%) sepia(98%) saturate(1299%) hue-rotate(182deg) brightness(103%) contrast(97%);
-    /* Twitter */
 }
 
-/* Mobile hamburger menu */
+/* Hamburger menu button */
 .hamburger {
     display: none;
     flex-direction: column;
-    gap: 4px;
-    background: none;
-    border: none;
     cursor: pointer;
-    padding: 8px;
-    z-index: 1001;
+    padding: 4px;
+    z-index: 101;
 }
 
-.hamburgerLine {
+.hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
-    transition: all 0.3s ease;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
     border-radius: 2px;
 }
 
-.hamburgerLine.active:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+/* Hamburger animation */
+.hamburger.open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
 }
 
-.hamburgerLine.active:nth-child(2) {
+.hamburger.open span:nth-child(2) {
     opacity: 0;
 }
 
-.hamburgerLine.active:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+.hamburger.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* Mobile menu overlay */
+/* Mobile menu */
 .mobileMenu {
     position: fixed;
     top: 80px;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(20px);
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
     transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 999;
-    border-bottom: 1px solid rgba(229, 246, 90, 0.2);
+    transition: transform 0.3s ease-in-out;
+    z-index: 98;
+    padding: 2rem;
 }
 
 .mobileMenu.open {
     transform: translateY(0);
 }
 
-.mobileMenuContent {
+.mobileNavLinks {
     display: flex;
     flex-direction: column;
-    padding: 2rem 1rem;
-    gap: 1rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
-.mobileMenuContent a {
-    color: white;
-    text-decoration: none;
-    font-family: "Syne", sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding: 1rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    text-align: center;
-    border: 1px solid transparent;
-}
-
-.mobileMenuContent a:hover {
-    background: rgba(229, 246, 90, 0.1);
-    border-color: rgba(229, 246, 90, 0.3);
-    color: #E5F65A;
-}
-
-/* Logo cursor pointer */
-.image {
+.mobileNavLinks p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    padding: 12px 16px;
     cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 18px;
 }
 
-/* Large screen optimizations */
-@media (min-width: 1200px) {
-    .box {
-        padding: 0 3rem;
-    }
-    
-    .leftNav {
-        gap: 1.5rem;
-    }
-    
-    .leftNav a {
-        padding: 10px 16px;
-        font-size: 15px;
-    }
-    
-    .socialIcon {
-        padding: 10px 14px;
-        gap: 8px;
-    }
-    
-    .socialIcon img {
-        width: 22px;
-        height: 22px;
-    }
+.mobileNavLinks p:hover {
+    color: #FF3300;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* Medium screen adjustments */
-@media (min-width: 769px) and (max-width: 1199px) {
-    .leftNav {
-        gap: 1rem;
+.mobileSocialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.mobileSocialIcons .socialIcon {
+    padding: 8px 12px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 0 1rem;
     }
-    
-    .leftNav a {
+
+    .leftNav {
+        gap: 0.5rem;
+    }
+
+    .leftNav p {
         padding: 8px 12px;
         font-size: 14px;
     }
-}
 
-/* Responsive design */
-@media (max-width: 768px) {
-    .leftNav {
-        display: none !important;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .right {
-        justify-content: flex-end;
-    }
-}
-
-@media (max-width: 767px) {
-    .box {
-        padding: 0 1rem;
-        height: 70px;
-    }
-    
-    .image {
-        width: 100px;
-        height: 70px;
-    }
-    
-    .mobileMenu {
-        top: 70px;
-    }
-    
-    .rightNav {
-        gap: 0.5rem;
-    }
-    
     .socialIcon {
         padding: 8px 12px;
         gap: 6px;
     }
-    
+
     .socialIcon img {
         width: 20px;
         height: 20px;
     }
-    
-    .socialIcon span {
-        display: none;
+
+    .logo {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
     }
 }
 
-@media (max-width: 639px) {
-    .box {
-        height: 60px;
-        padding: 0 0.5rem;
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
     }
-    
-    .image {
+
+    .left,
+    .right {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .center {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .logo {
         width: 80px;
-        height: 60px;
+        height: 40px;
+        font-size: 14px;
     }
-    
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 1rem;
+        height: 70px;
+    }
+
     .mobileMenu {
-        top: 60px;
+        top: 70px;
+        padding: 1rem;
     }
-    
-    .socialIcon {
+
+    .logo {
+        width: 90px;
+        height: 95px;
+        font-size: 12px;
+    }
+
+    .mobileSocialIcons .socialIcon {
         padding: 6px 8px;
     }
-    
-    .socialIcon img {
+
+    .mobileSocialIcons .socialIcon img {
         width: 18px;
         height: 18px;
     }

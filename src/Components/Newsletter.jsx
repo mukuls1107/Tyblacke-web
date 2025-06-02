@@ -12,38 +12,38 @@ const Newsletter = () => {
     console.log("Newsletter signup:", email);
     setIsSubmitted(true);
     setEmail("");
-    
+
     // Reset the submitted state after 3 seconds
     setTimeout(() => setIsSubmitted(false), 3000);
-  };  return (
+  };
+  return (
     <section className={styles.newsletter} id="newsletter">
       <div className={styles.container}>
         <h2 className={styles.title}>Stay Connected</h2>
         <p className={styles.subtitle}>
-          Join our community and be the first to know about new music releases, 
-          upcoming events, and ministry updates. Let's walk this faith journey together.
+          Join our community and be the first to know about new music releases,
+          upcoming events, and updates. Let's walk this faith journey
+          together.
         </p>
-        
+
         <div className={styles.benefits}>
           <div className={styles.benefit}>
-            <div className={styles.benefitIcon}>🎵</div>
             <div className={styles.benefitTitle}>New Music Releases</div>
-            <div className={styles.benefitDescription}>Be first to hear new songs and albums</div>
+            <div className={styles.benefitDescription}>
+              Be first to hear new songs and albums
+            </div>
           </div>
           <div className={styles.benefit}>
-            <div className={styles.benefitIcon}>📅</div>
             <div className={styles.benefitTitle}>Event Announcements</div>
-            <div className={styles.benefitDescription}>Get notified about concerts and appearances</div>
+            <div className={styles.benefitDescription}>
+              Get notified about concerts and appearances
+            </div>
           </div>
           <div className={styles.benefit}>
-            <div className={styles.benefitIcon}>🙏</div>
             <div className={styles.benefitTitle}>Prayer Requests</div>
-            <div className={styles.benefitDescription}>Join our prayer community</div>
-          </div>
-          <div className={styles.benefit}>
-            <div className={styles.benefitIcon}>✨</div>
-            <div className={styles.benefitTitle}>Ministry Updates</div>
-            <div className={styles.benefitDescription}>Stay connected with our mission</div>
+            <div className={styles.benefitDescription}>
+              Join our prayer community
+            </div>
           </div>
         </div>
 

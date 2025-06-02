@@ -1,5 +1,19 @@
 /* Footer Component Styles - TY BLACKE Brand */
 
+a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+a:hover {
+    color: #E5F65A;
+    text-decoration: none;
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(229, 246, 90, 0.3);
+}
+
 .footer {
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
     color: white;
@@ -247,27 +261,27 @@
     .footer {
         padding: 3rem 0 1.5rem;
     }
-    
+
     .footerContent {
         grid-template-columns: 1fr;
         gap: 2.5rem;
         text-align: center;
     }
-    
+
     .brandSection {
         align-items: center;
     }
-    
+
     .socialSection {
         align-items: center;
     }
-    
+
     .socialIcons {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
+
     .linksSection {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
@@ -279,48 +293,48 @@
         padding: 2.5rem 0 1rem;
         margin-top: 2rem;
     }
-    
+
     .footerContent {
         gap: 2rem;
     }
-    
+
     .linksSection {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         text-align: center;
     }
-    
+
     .socialIcons {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.8rem;
     }
-    
+
     .socialIcon {
         min-width: auto;
         justify-content: center;
         padding: 0.6rem 0.8rem;
         font-size: 0.8rem;
     }
-    
+
     .socialIcon img {
         width: 18px;
         height: 18px;
     }
-    
+
     .footerBottom {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
     }
-    
+
     .footerLinks {
         gap: 1rem;
     }
-    
+
     .brandName {
         font-size: 1.5rem;
     }
-    
+
     .brandTagline {
         font-size: 0.9rem;
         text-align: center;
@@ -331,30 +345,30 @@
     .footer {
         padding: 2rem 0 1rem;
     }
-    
+
     .footerContent {
         gap: 1.5rem;
     }
-    
+
     .socialIcons {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .socialIcon {
         width: 100%;
         justify-content: center;
     }
-    
+
     .footerLinks {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .brandName {
         font-size: 1.3rem;
     }
-    
+
     .logoImage {
         width: 60px;
         height: 45px;
@@ -367,20 +381,21 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-.footerContent > * {
+.footerContent>* {
     animation: fadeInUp 0.6s ease-out;
 }
 
-.footerContent > *:nth-child(2) {
+.footerContent>*:nth-child(2) {
     animation-delay: 0.1s;
 }
 
-.footerContent > *:nth-child(3) {
+.footerContent>*:nth-child(3) {
     animation-delay: 0.2s;
 }

@@ -10,7 +10,7 @@ const Merchandise = () => {
           <div className={styles.badge}>Merchandise</div>
           <h2 className={styles.title}>Wear Your Faith</h2>
           <p className={styles.subtitle}>
-            Show your support for the ministry with our collection of
+            Show your support with our collection of
             faith-inspired merchandise.
           </p>
           <a href="#newsletter" className={styles.notifyButton}>
