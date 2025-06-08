@@ -6,7 +6,7 @@ const ImageBar = ({ items }) => {
       <div className={styles.rightNav}>
         {items.map((item, idx) => (
           <a
-            href={`https://www.${item.title.toLowerCase()}.com/@tyblacke`}
+            href={`https://www.${item.title.toLowerCase()}.com/tyblacke`}
             className={styles.socialIcon}
             key={idx}
             target="_blank"
